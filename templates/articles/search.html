@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action='/articles/' method="GET">
+	<input type="text" name="q" />
+	<input type="submit" />
+</form>
+
+<ol>
+{% for object in object_list %}
+    {% if object.title %}
+	   <li><a href="{{ object.get_absolute_url }}">{{ object.title }}</object></a></li>
+    {% endif %}
+{% endfor %}
+</ol>
+
+{% endblock content %}
